@@ -121,8 +121,9 @@
 
       </div>
 
-      <hr>
+      <hr/>
       <adsbygoogle :ad-slot="slot" />
+      <hr/>
       <vue-disqus shortname="www-illustrarama-com-1" :identifier="posts._id" v-bind:url="'https://www.illustrarama.com/news/'+posts._id"></vue-disqus>
     </div> <!-- /container -->
 
