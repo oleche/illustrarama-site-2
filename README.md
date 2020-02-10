@@ -1,6 +1,6 @@
 # illustrarama-site
 
-[![CircleCI](https://circleci.com/gh/oleche/illustrarama-site.svg?style=svg&circle-token=451a6a7444632d7b00dfd32818672cdb306a30c4)](https://circleci.com/gh/oleche/illustrarama-site)
+[![CircleCI](https://circleci.com/gh/oleche/illustrarama-site.svg?style=svg&circle-token=ae963b3225c5c8486fa058ae15ae783c87721128)](https://circleci.com/gh/oleche/illustrarama-site)
 
 > Nuxt.js project
 
