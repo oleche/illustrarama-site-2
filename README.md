@@ -1,8 +1,14 @@
 # illustrarama-site
 
+[![Logo](https://www.illustrarama.com/logo.png)]
+
 [![CircleCI](https://circleci.com/gh/oleche/illustrarama-site-2.svg?style=svg&circle-token=ae963b3225c5c8486fa058ae15ae783c87721128)](https://circleci.com/gh/oleche/illustrarama-site-2)
 
 > Nuxt.js project
+
+This is the website source code for the [illustrarama.com](https://www.illustrarama.com) site. This is written in javascript using [nuxt.js](https://nuxtjs.org/).
+
+This a rebooted repository as all the api keys were hardcoded, that is why it is not possible to see all the previous commits. There were 93 commits before.
 
 ## Build Setup
 
