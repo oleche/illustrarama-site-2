@@ -26,7 +26,7 @@
     <article class="container content text-center">
     	<div class="title">
         <h1 class="display-3" style="word-wrap: break-word;">{{posts.title}}</h1>
-        <p>V&iacute;a <a style="color#e74c3c;" v-bind:href="posts.source" target="_blank">{{posts.origin}}</a></p>
+        <p>V&iacute;a <a style="color#e74c3c;" v-bind:href="posts.source+'?utm_source=illustrarama.com'" target="_blank">{{posts.origin}}</a></p>
         <div class="container">
           <social-sharing v-bind:url="'https://www.illustrarama.com/news/'+posts._id"
                       v-bind:title="posts.title"
@@ -98,7 +98,7 @@
       <div v-if="posts.next!=null" class="row text-center">
         <div class="col-md-6">
           <div class='btn-cont'>
-             <a class='btn' v-bind:href="posts.source" style="margin-top:25px;" target="_blank">
+             <a class='btn' v-bind:href="posts.source+'?utm_source=illustrarama.com'" style="margin-top:25px;" target="_blank">
                Artículo original <small>(Inglés)</small>
                <span class='line-1'></span>
                <span class='line-2'></span>
