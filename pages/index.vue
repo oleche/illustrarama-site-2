@@ -184,7 +184,7 @@ export default {
     let tag = await API.tags();
     let postentries = await API.posts(page); //axios.get(`https://api.illustrarama.com/api/v1/news?page=${page}`)
     page = +page+1;
-    if (page > 1){
+    if (page > 2){
       pageText = `| Página ${page-1}`;
     }
     // if (postentries.data.length > 0){
