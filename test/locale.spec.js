@@ -27,7 +27,7 @@ describe('homepage', () => {
   test('Route / exits and render HTML', async () => {
     const context = {}
     const { html } = await nuxt.server.renderRoute('/', context)
-    expect(html).toContain('<title>Illustrarama | Source of illustration and design news | Página 1</title>')
+    expect(html).toContain('<title>Illustrarama | Source of illustration and design news </title>')
   })
 
   // Example of testing via dom checking
