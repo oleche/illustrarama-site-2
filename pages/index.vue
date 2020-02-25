@@ -46,7 +46,7 @@ export default {
   layout: 'default',
   head () {
     return {
-      title: `Illustrarama | Source of illustration and design news | Página ${this.page-1}`,
+      title: `Illustrarama | Source of illustration and design news ${this.pageText}`,
       meta: [
         {
           "http-equiv": `content-language`,
@@ -59,13 +59,13 @@ export default {
         {
           hid: `description`,
           name: 'description',
-          content: `Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Página ${this.page}`
+          content: `Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración ${this.pageText}`
         },
         {
           hid: `keywords`,
           name: 'keywords',
-          keywords: 'illustrarama, ilustracion, ilustración, diseno, diseño, diseño gráfico, diseno grafico, arte, artistas, ilustradores, noticias, noticias de ilustracion, noticias de ilusatración, recursos de diseno, recursos de diseño',
-          content: 'illustrarama, ilustracion, ilustración, diseno, diseño, diseño gráfico, diseno grafico, arte, artistas, ilustradores, noticias, noticias de ilustracion, noticias de ilusatración, recursos de diseno, recursos de diseño'
+          keywords: 'arte, illustrarama, ilustracion, ilustración, diseno, diseño, diseño gráfico, diseno grafico, arte, artistas, ilustradores, noticias, noticias de ilustracion, noticias de ilustración, recursos de diseno, recursos de diseño',
+          content: 'arte, illustrarama, ilustracion, ilustración, diseno, diseño, diseño gráfico, diseno grafico, arte, artistas, ilustradores, noticias, noticias de ilustracion, noticias de ilustración, recursos de diseno, recursos de diseño'
         },
         {
           hid: `image`,
@@ -177,12 +177,16 @@ export default {
     },
   async asyncData ({ route }) {
     let page = 1;
+    let pageText = "";
     if (route.query.page !== undefined){
       page = `${route.query.page}`;
     }
     let tag = await API.tags();
     let postentries = await API.posts(page); //axios.get(`https://api.illustrarama.com/api/v1/news?page=${page}`)
     page = +page+1;
+    if (page > 1){
+      pageText = `| Página ${page-1}`;
+    }
     // if (postentries.data.length > 0){
     //   for (let i=0; i<postentries.data.length; i++){
     //
@@ -197,7 +201,7 @@ export default {
     //     }
     //   }
     // }
-    return { posts: postentries.posts, page: page, tags: tag.tags }
+    return { posts: postentries.posts, page: page, tags: tag.tags, pageText: pageText }
   },
   components: {
     PostList

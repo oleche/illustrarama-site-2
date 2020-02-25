@@ -1,3 +1,5 @@
 # robotstxt.org
 
+Sitemap: https://www.illustrarama.com/sitemap.xml
 User-agent: *
+Disallow:
