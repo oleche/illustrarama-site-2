@@ -3,7 +3,7 @@
     <!-- Post-->
     <div class="demo-title">&nbsp;</div>
 
-    <a v-bind:href="'/news/'+post._id"><div class="post-module">
+    <a v-bind:href="'/news?v='+post._id"><div class="post-module">
       <!-- Thumbnail-->
       <div class="thumbnail">
         <div class="date">

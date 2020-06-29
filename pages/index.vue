@@ -190,7 +190,7 @@ export default {
     // if (postentries.data.length > 0){
     //   for (let i=0; i<postentries.data.length; i++){
     //
-    //     let disqus = await axios.get(`https://disqus.com/api/3.0/threads/list.json?api_secret=1dGauS5aMUoSEFuFFyy2vser61CJvliz04noYV8e5Qm3TTzjW4mFn0x6j6d67xQ2&forum=www-illustrarama-com-1&thread=link:https://www.illustrarama.com/news/${postentries.data[i]._id}`);
+    //     let disqus = await axios.get(`https://disqus.com/api/3.0/threads/list.json?api_secret=1dGauS5aMUoSEFuFFyy2vser61CJvliz04noYV8e5Qm3TTzjW4mFn0x6j6d67xQ2&forum=www-illustrarama-com-1&thread=link:https://www.illustrarama.com/news?v=${postentries.data[i]._id}`);
     //
     //     if (disqus.data.response !== undefined && disqus.data.response.length > 0){
     //       postentries.data[i].comments = disqus.data.response[0].posts;

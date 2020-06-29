@@ -17,7 +17,7 @@
             </a>
         </li>
         <li class="breadcrumb-item">
-            <a v-bind:to="'https://www.illustrarama.com/news/'+posts._id" class="active">
+            <a v-bind:to="'https://www.illustrarama.com/news?v='+posts._id" class="active">
                 {{posts.title}}
             </a>
         </li>
@@ -28,7 +28,7 @@
         <h1 class="display-3" style="word-wrap: break-word;">{{posts.title}}</h1>
         <p>V&iacute;a <a style="color#e74c3c;" v-bind:href="posts.source+'?utm_source=illustrarama.com'" target="_blank">{{posts.origin}}</a></p>
         <div class="container">
-          <social-sharing v-bind:url="'https://www.illustrarama.com/news/'+posts._id"
+          <social-sharing v-bind:url="'https://www.illustrarama.com/news?v'+posts._id"
                       v-bind:title="posts.title"
                       v-bind:description="posts.content"
                       v-bind:quote="posts.content"
@@ -109,7 +109,7 @@
          </div>
          <div class="col-md-6">
            <div class='btn-cont'>
-              <a class='btn' v-bind:href="'/news/'+posts.next._id" style="margin-top:25px;">
+              <a class='btn' v-bind:href="'/news?v='+posts.next._id" style="margin-top:25px;">
                 Siguiente articulo
                 <span class='line-1'></span>
                 <span class='line-2'></span>
@@ -124,7 +124,7 @@
       <hr/>
       <adsbygoogle :ad-slot="slot" />
       <hr/>
-      <vue-disqus shortname="www-illustrarama-com-1" :identifier="posts._id" v-bind:url="'https://www.illustrarama.com/news/'+posts._id"></vue-disqus>
+      <vue-disqus shortname="www-illustrarama-com-1" :identifier="posts._id" v-bind:url="'https://www.illustrarama.com/news?v='+posts._id"></vue-disqus>
     </div> <!-- /container -->
 
   </div>
@@ -197,7 +197,7 @@ export default {
         {
           hid: `og:url`,
           property: 'og:url',
-          content: `https://www.illustrarama.com/news/${posts._id}`
+          content: `https://www.illustrarama.com/news?v=${posts._id}`
         },
         {
           hid: `twitter:title`,
@@ -228,7 +228,7 @@ export default {
               "@type": "NewsArticle",
               "mainEntityOfPage": {
                 "@type": "WebPage",
-                "@id": "https://www.illustrarama.com/news/${posts._id}"
+                "@id": "https://www.illustrarama.com/news?v=${posts._id}"
               },
               "headline": "${encodeURI(posts.title)}",
               "image": [ "${posts.img}" ],
@@ -248,7 +248,7 @@ export default {
                 },
                 "sameAs": ["https://www.facebook.com/illustrarama/"]
               },
-              "url": "https://www.illustrarama.com/news/${posts._id}"
+              "url": "https://www.illustrarama.com/news?v=${posts._id}"
           }`,
           type: 'application/ld+json'
         },{
@@ -276,7 +276,7 @@ export default {
               "@type": "ListItem",
               "position": 3,
               "item": {
-                "@id": "https://www.illustrarama.com/news/${posts._id}",
+                "@id": "https://www.illustrarama.com/news?v=${posts._id}",
                 "name": "${posts.titleShort.replace(/['"]+/g, '')}",
                 "image": "${posts.img}"
               }
@@ -286,7 +286,7 @@ export default {
         }
       ],
       link: [
-        { rel: 'canonical', href: `https://www.illustrarama.com/news/${posts._id}` }
+        { rel: 'canonical', href: `https://www.illustrarama.com/news?v=${posts._id}` }
       ]
     }
   },

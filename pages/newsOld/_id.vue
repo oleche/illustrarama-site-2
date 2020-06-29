@@ -19,7 +19,7 @@ export default {
     if (id.indexOf("bootstrap.css.map") !== -1){
         return { posts: {}}
     }
-    let postentries = await API.entry(id)// axios.get(`https://api.illustrarama.com/api/v1/news/${id}`)
+    let postentries = await API.entry(id)// axios.get(`https://api.illustrarama.com/api/v1/news?v=${id}`)
     if (postentries.error){
       return error({ statusCode: postentries.error.response.status, message: postentries.error.response.data.message })
     }else{
