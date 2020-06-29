@@ -2,18 +2,22 @@
 
 exports[`SiteHeader renders properly 1`] = `
 <nav class="navbar bg-faded navbar-shadow navbar-light navbar-expand-md"><button type="button" aria-label="Toggle navigation" aria-controls="nav_collapse" aria-expanded="false" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button> <a target="_self" href="/" class="navbar-brand d-inline d-sm-none d-xs-none title-brand-sm text-center">Illustrarama<span class="sub-title-brand"><br>Source of illustration &amp; design news</span></a>
-  <div id="nav_collapse" class="navbar-collapse collapse" style="display: none;">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a target="_self" href="/" class="nav-link">Inicio</a></li>
-      <li class="nav-item"><a target="_self" href="/about" class="nav-link">Acerca de</a></li> <button type="button" class="btn btn btn-outline-danger btn-susbcribe btn-secondary">¡Suscribete!</button>
-    </ul>
-  </div> <a target="_self" href="/" class="navbar-brand d-none d-lg-block d-xl-block title-brand text-center">Illustrarama<span class="sub-title-brand"><br>Source of illustration &amp; design news</span></a>
-  <div id="nav_collapse" class="searchfix navbar-collapse collapse" style="display: none;">
-    <ul class="navbar-nav ml-auto"><br class="d-block d-sm-none d-xs-none">
-      <li class="form-inline">
-        <form action="/search" class="form-inline"><input name="q" type="text" placeholder="Buscar" class="mr-sm-2 form-control form-control-sm"> <button type="submit" class="btn btn btn-outline-danger my-2 my-sm-0 btn-secondary btn-sm">Buscar</button></form>
-      </li>
-    </ul>
-  </div>
+  <transition-stub css="true" enterclass="" leaveclass="collapse show" entertoclass="collapse show" leavetoclass="collapse" enteractiveclass="collapsing" leaveactiveclass="collapsing">
+    <div id="nav_collapse" class="navbar-collapse collapse" style="display: none;">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"><a target="_self" href="/" class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a target="_self" href="/about" class="nav-link">Acerca de</a></li> <button type="button" class="btn btn btn-outline-danger btn-susbcribe btn-secondary">¡Suscribete!</button>
+      </ul>
+    </div>
+  </transition-stub> <a target="_self" href="/" class="navbar-brand d-none d-lg-block d-xl-block title-brand text-center">Illustrarama<span class="sub-title-brand"><br>Source of illustration &amp; design news</span></a>
+  <transition-stub css="true" enterclass="" leaveclass="collapse show" entertoclass="collapse show" leavetoclass="collapse" enteractiveclass="collapsing" leaveactiveclass="collapsing" class="searchfix">
+    <div id="nav_collapse" class="navbar-collapse collapse" style="display: none;">
+      <ul class="navbar-nav ml-auto"><br class="d-block d-sm-none d-xs-none">
+        <li class="form-inline">
+          <form action="/search" class="form-inline"><input name="q" type="text" placeholder="Buscar" class="mr-sm-2 form-control form-control-sm"> <button type="submit" class="btn btn btn-outline-danger my-2 my-sm-0 btn-secondary btn-sm">Buscar</button></form>
+        </li>
+      </ul>
+    </div>
+  </transition-stub>
 </nav>
 `;
