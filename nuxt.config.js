@@ -20,6 +20,9 @@ module.exports = {
     ]
   },
   modules: [
+    ['@nuxtjs/redirect-module', {
+      // Redirect option here
+    }],
     // Simple usage
     ['nuxt-cookie-control', {
       //your options
@@ -73,6 +76,9 @@ module.exports = {
     '~/plugins/vue-facebook-signin-button',
     '~/plugins/disqus',
     '~/plugins/vue-social-sharing',
+  ],
+  redirect: [
+    { from: '^/news/(.*)$', to: '/news?v=$1' } // One to one mapping
   ],
   cookies: {
     necessary: [
