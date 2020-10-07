@@ -75,24 +75,54 @@
           <p>
             <img v-bind:src="posts.img" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="posts.title"/>
           </p>
-          <p v-for="(section, index) in posts.sections" :key="index">
-            <span v-if="section.type=='TEXT'">
-              {{section.content}}
-            </span>
+          <div v-for="(section, index) in posts.sections" :key="index">
+            <p v-if="section.type=='TEXT' || section.type=='TITLE'|| section.type=='SPECIALTEXT'">
+              <span v-if="section.type=='TEXT'">
+                <small class="blockquote-footer" v-if="section.type=='TEXT' && index > 0 && (posts.sections[index-1].type === 'TWITTER' || posts.sections[index-1].type === 'INSTAGRAM')" v-html="section.content">
+                  {{section.content}}
+                </small>
+                <span v-else>
+                  {{section.content}}
+                </span>
+              </span>
 
-            <span v-if="section.type=='TITLE'">
-              <h2>{{section.content}}</h2>
-            </span>
+              <span v-if="section.type=='TITLE'">
+                <h2>{{section.content}}</h2>
+              </span>
 
-            <span v-html='section.content' v-if="section.type=='SPECIALTEXT'">
-              {{section.content}}
-            </span>
+              <span v-html='section.content' v-if="section.type=='SPECIALTEXT'">
+                {{section.content}}
+              </span>
+            </p>
 
-            <span v-if="section.type=='IMAGE'" class="figure text-center container">
+            <div v-if="section.type=='TEXT_TWITTER'" class="figure text-center container">
+              <figcaption class="figure-caption">{{section.content}}</figcaption>
+              <br/>
+            </div>
+
+            <div class="embed-responsive embed-responsive-4by3" v-html='section.content' v-if="section.type=='SOCIAL'">
+                {{section.content}}
+            </div>
+
+            <div class="d-flex justify-content-center" v-html='section.content' v-if="section.type=='TWITTER'">
+              <blockquote v-twitter-widgets class="twitter-tweet">
+                  {{section.content}}
+              </blockquote>
+            </div>
+
+            <div class="d-flex px-md-5 col justify-content-center" v-html='section.content' v-if="section.type=='INSTAGRAM'">
+                {{section.content}}
+            </div>
+
+            <ul class="row" v-html='section.content' v-if="section.type=='LIST'">
+                  {{section.content}}
+            </ul>
+
+            <div v-if="section.type=='IMAGE'" class="figure text-center container">
               <img v-bind:src="section.url" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="section.content"/>
               <figcaption class="figure-caption">{{section.content}}</figcaption>
-            </span>
-          </p>
+            </div>
+          </div>
         </div>
       </div>
       <div v-if="posts.next!=null" class="row text-center">

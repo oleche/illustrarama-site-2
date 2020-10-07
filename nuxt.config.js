@@ -13,10 +13,15 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato|Poiret+One|Raleway' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Lato|Poiret+One|Raleway' },
+      { rel: 'stylesheet', href: '/css/style.css' }
     ],
     script: [
-      {src:'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'}
+      {src:'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'},
+      {
+        src:'https://platform.instagram.com/en_US/embeds.js',
+        async: true
+      }
     ]
   },
   modules: [
@@ -65,6 +70,11 @@ module.exports = {
       /* module options */
       track: 'PageView',
       pixelId: process.env.FACEBOOK_PIXEL_KEY || '000000000000000',
+    }],
+    ['@miyaoka/nuxt-twitter-widgets-module', {
+      /* module options */
+      directiveName: 'twitter-widgets',
+      scriptUrl: '//platform.twitter.com/widgets.js'
     }]
   ],
   buildModules: [
