@@ -78,16 +78,12 @@
           <div v-for="(section, index) in posts.sections" :key="index">
             <p v-if="section.type=='TEXT' || section.type=='TITLE'|| section.type=='SPECIALTEXT'">
               <span v-if="section.type=='TEXT'">
-                <small class="blockquote-footer" v-if="section.type=='TEXT' && index > 0 && (posts.sections[index-1].type === 'TWITTER' || posts.sections[index-1].type === 'INSTAGRAM')" v-html="section.content">
-                  {{section.content}}
-                </small>
-                <span v-else>
-                  {{section.content}}
-                </span>
+                <small class="blockquote-footer" v-if="section.type=='TEXT' && index > 0 && (posts.sections[index-1].type === 'TWITTER' || posts.sections[index-1].type === 'INSTAGRAM')" v-html="section.content"/>
+                <span v-else v-html="section.content"/>
               </span>
 
               <span v-if="section.type=='TITLE'">
-                <h2>{{section.content}}</h2>
+                <h2 v-html="section.content"/>
               </span>
 
               <span v-html='section.content' v-if="section.type=='SPECIALTEXT'">
@@ -96,7 +92,7 @@
             </p>
 
             <div v-if="section.type=='TEXT_TWITTER'" class="figure text-center container">
-              <figcaption class="figure-caption">{{section.content}}</figcaption>
+              <figcaption class="figure-caption" v-html="section.content"/>
               <br/>
             </div>
 
@@ -115,12 +111,10 @@
             </div>
 
             <ul class="row" v-html='section.content' v-if="section.type=='LIST'">
-                  {{section.content}}
-            </ul>
 
             <div v-if="section.type=='IMAGE'" class="figure text-center container">
               <img v-bind:src="section.url" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="section.content"/>
-              <figcaption class="figure-caption">{{section.content}}</figcaption>
+              <figcaption class="figure-caption" v-html="section.content"/>
             </div>
           </div>
         </div>

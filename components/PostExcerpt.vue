@@ -14,9 +14,9 @@
       <!-- Post Content-->
       <div class="post-content">
         <div class="category">{{post.category}}</div>
-        <h2 class="title">{{post.title}}</h2>
-        <h3 class="sub_title">{{post.origin}}</h3>
-        <p class="description">{{post.category}}</p>
+        <h2 class="title" v-html="post.title"/>
+        <h3 class="sub_title" v-html="post.origin"/>
+        <p class="description" v-html="post.category"/>
         <div class="post-meta"><span class="timestamp"><i class="fa fa-clock"></i> {{post.published | moment("from", "now")}}</span><span class="comments"></span></div>
         <!-- <i class="fa fa-comments"></i> <i class="fa fa-heart"> </i>-->
       </div>
