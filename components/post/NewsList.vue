@@ -17,9 +17,7 @@
             </a>
         </li>
         <li class="breadcrumb-item">
-            <a v-bind:to="'https://www.illustrarama.com/news?v='+posts._id" class="active">
-                {{posts.title}}
-            </a>
+            <a v-bind:to="'https://www.illustrarama.com/news?v='+posts._id" class="active" v-html="posts.title"/>
         </li>
     </ol>
 
@@ -92,7 +90,7 @@
             </p>
 
             <div v-if="section.type=='TEXT_TWITTER'" class="figure text-center container">
-              <figcaption class="figure-caption" v-html="section.content"/>
+              <figcaption class="figure-caption">{{section.content}}</figcaption>
               <br/>
             </div>
 
@@ -110,7 +108,8 @@
                 {{section.content}}
             </div>
 
-            <ul class="row" v-html='section.content' v-if="section.type=='LIST'">
+            <ul class="row list" v-html='section.content' v-if="section.type=='LIST'">
+            </ul>
 
             <div v-if="section.type=='IMAGE'" class="figure text-center container">
               <img v-bind:src="section.url" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="section.content"/>
@@ -331,6 +330,10 @@ export default {
 
 .breadcrumb-item a{
   word-wrap: break-word;
+}
+
+.list {
+  display:block!important;
 }
 
 @media screen and (max-width: 768px) {
