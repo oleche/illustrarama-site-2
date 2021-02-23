@@ -25,7 +25,7 @@
 
     <article class="container content text-center">
     	<div class="title">
-        <h1 class="display-3" style="word-wrap: break-word;">{{posts.title}}</h1>
+        <h1 class="display-3" style="word-wrap: break-word;" v-html="posts.title"/>
         <p>V&iacute;a <a style="color#e74c3c;" v-bind:href="posts.source+'?utm_source=illustrarama.com'" target="_blank">{{posts.origin}}</a></p>
         <div class="container">
           <social-sharing v-bind:url="'https://www.illustrarama.com/news?v'+posts._id"
