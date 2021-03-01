@@ -68,7 +68,7 @@
           <adsbygoogle :ad-slot="slot" />
           <hr/>
           <p>
-            <small class="day">Publicado el {{ posts.published | moment("LL") }}</small>
+            <small class="day" v-if="posts.published">Publicado el {{ posts.published | moment("LL") }}</small>
           </p>
           <p>
             <img v-bind:src="posts.img" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="posts.title"/>

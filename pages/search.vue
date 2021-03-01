@@ -28,9 +28,9 @@
         </div>
 
      </div>
-     <no-ssr>
-      <CookieControl locale="es"/>
-    </no-ssr>
+     <client-only>
+        <CookieControl locale="es"/>
+     </client-only>
 
     </div>
   </section>

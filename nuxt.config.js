@@ -58,7 +58,6 @@ module.exports = {
       siteKey: process.env.RECAPTCHA_KEY || '0000000000000000',
       version: 3,
     }],
-    'nuxt-fontawesome',
     'bootstrap-vue/nuxt',
     ['@nuxtjs/google-adsense', {
       id: process.env.ADSENSE_ACCT || 'ca-pub-0000000000000000',
@@ -79,7 +78,11 @@ module.exports = {
   ],
   buildModules: [
     // Simple usage
-   ['@nuxtjs/dotenv',{ path: '/opt/illustrarama/config/' }]
+   ['@nuxtjs/dotenv',{ path: '/opt/illustrarama/config/' }],
+   ['@nuxtjs/fontawesome', {
+     component: 'fa',
+      suffix: true
+   }]
   ],
   plugins: [
     '~/plugins/vue-moment',
@@ -110,14 +113,6 @@ module.exports = {
     ]
   },
   serverMiddleware: ["~/middleware/response-header.js"],
-  fontawesome: {
-    component: 'fa',
-    imports: [
-        {
-          set: '@fortawesome/fontawesome-free-solid'
-        },
-    ],
-  },
   /*
   ** Customize the progress bar color
   */

@@ -17,7 +17,7 @@
         <h2 class="title" v-html="post.title"/>
         <h3 class="sub_title" v-html="post.origin"/>
         <p class="description" v-html="post.category"/>
-        <div class="post-meta"><span class="timestamp"><i class="fa fa-clock"></i> {{post.published | moment("from", "now")}}</span><span class="comments"></span></div>
+        <div class="post-meta"><i class="fa fa-clock"></i><span class="timestamp"> {{post.published | moment("from", "now")}}</span></div>
         <!-- <i class="fa fa-comments"></i> <i class="fa fa-heart"> </i>-->
       </div>
     </div></a>

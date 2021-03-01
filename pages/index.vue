@@ -27,12 +27,12 @@
         </div>
 
      </div>
-     <no-ssr>
+     <client-only>
        <CookieControl locale="es"/>
        <div slot="message">
           Este sitio utiliza cookies para optimizar la experiencia del usuario. Al continuar en él accede a seguir utilizándolas. Para más información sobre nuestra política de cookies <router-link to="/cookies">haga click aquí</router-link>
         </div>
-    </no-ssr>
+    </client-only>
 
     </div>
   </section>
