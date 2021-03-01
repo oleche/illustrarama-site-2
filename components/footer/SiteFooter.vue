@@ -6,7 +6,7 @@
         <span>&copy; Illustrarama.com 2018</span>
         <p>Hecho con <i class='fa fa-heart' /> por <a href='https://www.illustrarama.com/about'>Illustrarama</a></p>
       </div>
-      <div class="col-md-2 col-xs-12 text-center">Siguenos en: <a href="https://www.facebook.com/illustrarama" target="_blank" class="pull-right"><img class="img img-responsive" src="/ico-facebook.png" alt="Facebook logo to illustrarama fanpage"></a></div>
+      <div class="col-md-2 col-xs-12 text-center">Siguenos en: <a href="https://www.facebook.com/illustrarama" target="_blank" class="pull-right" rel="noopener"><img class="img img-responsive" src="/ico-facebook.png" alt="Facebook logo to illustrarama fanpage"></a></div>
     </div>
 
     <b-modal id="modal-1" hide-header hide-footer body-class="modalito">
@@ -68,7 +68,7 @@
   display: block;
 }
 .error{
-  color:#e74c3c;
+  color:#E02D19;
   top:5px;
   position:relative;
 }

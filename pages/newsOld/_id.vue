@@ -38,7 +38,7 @@ export default {
 
 <style>
 a {
-  color:#e74c3c!important;
+  color:#E02D19!important;
 }
 
 .btn-cont {

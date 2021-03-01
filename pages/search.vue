@@ -199,7 +199,7 @@ export default {
 .title-1 span{
   font-size: 2.0rem!important;
   font-weight: bolder!important;
-  color: #e74c3c!important;
+  color: #E02D19!important;
 }
 .post-module {
   position: relative;
@@ -240,7 +240,7 @@ export default {
   top: 20px;
   right: 20px;
   z-index: 1;
-  background: #e74c3c;
+  background: #E02D19;
   width: 55px;
   height: 55px;
   padding: 3.5px 0;
@@ -289,7 +289,7 @@ export default {
   position: absolute;
   top: -34px;
   left: 0;
-  background: #e74c3c;
+  background: #E02D19;
   padding: 10px 15px;
   color: #FFFFFF;
   font-size: 14px;
@@ -306,7 +306,7 @@ export default {
 .post-module .post-content .sub_title {
   margin: 0;
   padding: 0 0 20px;
-  color: #e74c3c;
+  color: #E02D19;
   font-size: 20px;
   font-weight: 400;
 }
@@ -367,7 +367,7 @@ export default {
   text-decoration: none;
 }
 .container .info span .fa {
-  color: #e74c3c;
+  color: #E02D19;
 }
 
 

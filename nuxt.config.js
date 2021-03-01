@@ -17,7 +17,7 @@ module.exports = {
       { rel: 'stylesheet', href: '/css/style.css' }
     ],
     script: [
-      {src:'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'},
+      {src:'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'},
       {
         src:'https://platform.instagram.com/en_US/embeds.js',
         async: true

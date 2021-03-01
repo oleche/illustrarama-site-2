@@ -8,16 +8,14 @@
         <b-nav-item href="/about">Acerca de</b-nav-item>
         <b-button class="btn btn-outline-danger btn-susbcribe" v-b-modal.modal-1 ref="btnShow">¡Suscribete!</b-button>
       </b-navbar-nav>
-    </b-collapse>
-    <b-navbar-brand class="d-none d-lg-block d-xl-block title-brand text-center" href="/">Illustrarama<span class="sub-title-brand"><br/>Source of illustration & design news</span></b-navbar-brand>
-    <b-collapse is-nav id="nav_collapse" class="searchfix">
-      <b-navbar-nav class="ml-auto">
+      <b-navbar-brand class="d-none d-lg-block d-xl-block title-brand text-center" href="/">Illustrarama<span class="sub-title-brand"><br/>Source of illustration & design news</span></b-navbar-brand>
+      <div class="ml-auto right">
         <br class="d-block d-sm-none d-xs-none"/>
-        <b-nav-form action="/search">
+        <b-form class="navbar-nav" action="/search">
           <b-form-input size="sm" :name="'q'" class="mr-sm-2" type="text" placeholder="Buscar"/>
           <b-button size="sm" class="btn btn-outline-danger my-2 my-sm-0" type="submit">Buscar</b-button>
-        </b-nav-form>
-      </b-navbar-nav>
+        </b-form>
+      </div>
     </b-collapse>
   </b-navbar>
 </template>

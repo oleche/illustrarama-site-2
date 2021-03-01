@@ -4,7 +4,7 @@
     <div class="container">
       <div class="info">
         <h1 class="title-1">Bienvenido a <span>Illustrarama.com</span></h1>
-        <span>Hemos extraido articulos de: | </span><span style="color:#e74c3c;" v-for="tag in tags" :key="tag._id"> <a style="color:#e74c3c" v-bind:href="'/tag/'+tag.tag">{{tag.name}}</a> | </span>
+        <span>Hemos extraido articulos de: | </span><span style="color:#E02D19;" v-for="tag in tags" :key="tag._id"> <a style="color:#E02D19" v-bind:href="'/tag/'+tag.tag">{{tag.name}}</a> | </span>
 
       </div>
       <hr/>
@@ -269,7 +269,7 @@ export default {
   top: 20px;
   right: 20px;
   z-index: 1;
-  background: #e74c3c;
+  background: #E02D19;
   width: 55px;
   height: 55px;
   padding: 3.5px 0;
@@ -318,7 +318,7 @@ export default {
   position: absolute;
   top: -34px;
   left: 0;
-  background: #e74c3c;
+  background: #E02D19;
   padding: 10px 15px;
   color: #FFFFFF;
   font-size: 14px;
@@ -335,7 +335,7 @@ export default {
 .post-module .post-content .sub_title {
   margin: 0;
   padding: 0 0 20px;
-  color: #e74c3c;
+  color: #E02D19;
   font-size: 20px;
   font-weight: 400;
 }
@@ -397,7 +397,7 @@ export default {
   text-decoration: none;
 }
 .container .info span .fa {
-  color: #e74c3c;
+  color: #E02D19;
 }
 
 

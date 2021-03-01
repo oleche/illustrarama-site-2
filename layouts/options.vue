@@ -30,7 +30,7 @@
           <span>&copy; Illustrarama.com 2018</span>
           <p>Hecho con <i class='fa fa-heart' /> por <a href='https://www.illustrarama.com/about'>Illustrarama</a></p>
         </div>
-        <div class="col-md-2 col-2 text-right">Siguenos en: <a href="https://www.facebook.com/illustrarama" target="_blank" class="pull-right"><img class="img img-responsive" src="/ico-facebook.png" alt="Facebook logo to illustrarama fanpage"></a></div>
+        <div class="col-md-2 col-2 text-right">Siguenos en: <a href="https://www.facebook.com/illustrarama" target="_blank" class="pull-right" rel="noopener"><img class="img img-responsive" src="/ico-facebook.png" alt="Facebook logo to illustrarama fanpage"></a></div>
       </div>
     </div>
   </div>
