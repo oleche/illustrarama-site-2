@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewsList renders properly 1`] = `
+<div class="container">
+  <div class="info">
+    <h2>&nbsp;</h2>
+  </div>
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="https://www.illustrarama.com/">
+        Inicio
+      </a></li>
+    <li class="breadcrumb-item"><a href="https://www.illustrarama.com/tag/test">
+        test
+      </a></li>
+    <li class="breadcrumb-item"><a to="https://www.illustrarama.com/news?v=undefined" class="active"></a></li>
+  </ol>
+  <article class="container content text-center">
+    <div class="title">
+      <h1 class="display-3" style="word-wrap: break-word;"></h1>
+      <p>Vía <a href="undefined?utm_source=illustrarama.com" target="_blank"></a></p>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-2">
+            &nbsp;
+          </div>
+          <div class="col-3 col-sm-1 col-md-2"><span tabindex="0" data-link="#share-facebook"><img src="/ico-facebook.png" alt="Facebook" class="img img-responsive"></span></div>
+          <div class="col-3 col-sm-1 col-md-2"><span tabindex="0" data-link="#share-googleplus"><img src="/ico-google.png" alt="Google plus" class="img img-responsive"></span></div>
+          <div class="col-3 col-sm-1 col-md-2"><span tabindex="0" data-link="#share-linkedin"><img src="/ico-linkedin.png" alt="Linkedin" class="img img-responsive"></span></div>
+          <div class="col-3 col-sm-1 col-md-2"><span tabindex="0" data-link="#share-twitter"><img src="/ico-twitter.png" alt="Twitter" class="img img-responsive"></span></div>
+          <div class="col-sm-12 col-md-2">
+            &nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <hr>
+        <div ad-slot="0000000000"></div>
+        <hr>
+        <p><small class="day">Publicado el 23 de febrero de 2021</small></p>
+        <p><img class="figure-img img-fluid rounded mx-auto d-block"></p>
+      </div>
+    </div>
+    <!---->
+    <hr>
+    <div ad-slot="0000000000"></div>
+    <hr>
+    <div id="disqus_thread"></div>
+  </div>
+</div>
+`;
