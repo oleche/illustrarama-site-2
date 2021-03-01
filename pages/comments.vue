@@ -33,6 +33,9 @@
 export default {
   head () {
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: `Illustrarama | Source of illustration and design news | Politica de comentarios`,
       meta: [
         {
@@ -105,9 +108,14 @@ export default {
           content: 'Illustrarama | Politica de comentarios'
         },
         {
+          hid: `twitter:summary`,
+          name: 'twitter:summary',
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de comentarios'
+        },
+        {
           hid: `twitter:description`,
           name: 'twitter:description',
-          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración'
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de comentarios'
         },
         {
           hid: `twitter:image`,
@@ -117,7 +125,7 @@ export default {
         {
           hid: `twitter:card`,
           name: 'twitter:card',
-          content: 'article'
+          content: 'summary'
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],

@@ -46,6 +46,9 @@ export default {
   layout: 'default',
   head () {
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: `Illustrarama | Source of illustration and design news ${this.pageText}`,
       meta: [
         {
@@ -118,6 +121,11 @@ export default {
           content: 'Illustrarama | Source of illustration and design news'
         },
         {
+          hid: `twitter:summary`,
+          name: 'twitter:summary',
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración'
+        },
+        {
           hid: `twitter:description`,
           name: 'twitter:description',
           content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración'
@@ -130,7 +138,7 @@ export default {
         {
           hid: `twitter:card`,
           name: 'twitter:card',
-          content: 'article'
+          content: 'summary'
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],

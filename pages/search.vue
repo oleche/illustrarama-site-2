@@ -43,6 +43,9 @@ import API from '~/lib/api.js'
 export default {
   head () {
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: `Illustrarama | Source of illustration and design news | Busqueda de ${this.search}`,
       meta: [
         {
@@ -107,6 +110,11 @@ export default {
           content: `Illustrarama | Busqueda de ${this.search}`
         },
         {
+          hid: `twitter:summary`,
+          name: 'twitter:summary',
+          content: `Las mejores noticias de ${this.search}`
+        },
+        {
           hid: `twitter:description`,
           name: 'twitter:description',
           content: `Las mejores noticias de ${this.search}`
@@ -119,7 +127,7 @@ export default {
         {
           hid: `twitter:card`,
           name: 'twitter:card',
-          content: 'article'
+          content: 'summary'
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],

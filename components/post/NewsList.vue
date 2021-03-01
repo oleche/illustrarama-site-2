@@ -112,7 +112,7 @@
             </ul>
 
             <div v-if="section.type=='IMAGE'" class="figure text-center container">
-              <img v-bind:src="section.url" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="section.content"/>
+              <img v-bind:src="section.url" class="figure-img img-fluid rounded mx-auto d-block" v-bind:alt="section.content || 'imagen sin titulo'"/>
               <figcaption class="figure-caption" v-html="section.content"/>
             </div>
           </div>
@@ -164,6 +164,9 @@ export default {
   head () {
     let posts = this.posts
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: `Illustrarama.com | ${posts.titleShort}`,
       meta: [
         {
@@ -228,6 +231,11 @@ export default {
           content: posts.titleShort
         },
         {
+          hid: `twitter:summary`,
+          name: 'twitter:summary',
+          content: posts.content
+        },
+        {
           hid: `twitter:description`,
           name: 'twitter:description',
           content: posts.content
@@ -240,7 +248,7 @@ export default {
         {
           hid: `twitter:card`,
           name: 'twitter:card',
-          content: 'article'
+          content: 'summary'
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],

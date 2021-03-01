@@ -55,6 +55,9 @@
 export default {
   head () {
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: `Illustrarama | Source of illustration and design news | Acerca de`,
       meta: [
         {
@@ -132,6 +135,11 @@ export default {
           content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración'
         },
         {
+          hid: `twitter:summary`,
+          name: 'twitter:summary',
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración'
+        },
+        {
           hid: `twitter:image`,
           name: 'twitter:image',
           content: 'https://www.illustrarama.com/logo.png'
@@ -139,7 +147,7 @@ export default {
         {
           hid: `twitter:card`,
           name: 'twitter:card',
-          content: 'article'
+          content: 'summary'
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],

@@ -39,6 +39,9 @@
 export default {
   head () {
     return {
+      htmlAttrs: {
+        lang: 'es'
+      },
       title: `Illustrarama | Source of illustration and design news | Politica de privacidad`,
       meta: [
         {
@@ -111,9 +114,14 @@ export default {
           content: 'Illustrarama | Politica de privacidad'
         },
         {
+          hid: `twitter:summary`,
+          name: 'twitter:summary',
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de cookies'
+        },
+        {
           hid: `twitter:description`,
           name: 'twitter:description',
-          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración'
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de cookies'
         },
         {
           hid: `twitter:image`,
@@ -123,7 +131,7 @@ export default {
         {
           hid: `twitter:card`,
           name: 'twitter:card',
-          content: 'article'
+          content: 'summary'
         }
       ],
       __dangerouslyDisableSanitizers: ['script'],
