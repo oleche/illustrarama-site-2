@@ -126,6 +126,7 @@ export default {
             this.errorMsg = "Debes escribir una dirección de correo electrónico"
           }
         }catch(error){
+          console.log(error);
           this.errorMsg = "Ya estas suscrito!"
         }
       } catch (error) {
