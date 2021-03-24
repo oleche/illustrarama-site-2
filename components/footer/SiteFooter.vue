@@ -117,7 +117,7 @@ export default {
           email:this.email
         };
         try {
-          if (emailaddr != ""){
+          if (this.email != ""){
             let response = await axios.post(`${process.env.API_URL || 'http://localhost:3000/api/v1'}/subscriptions`, payload, {
               headers: { Authorization: "Basic "+(process.env.API_AUTH || '123') }
             })
@@ -126,7 +126,6 @@ export default {
             this.errorMsg = "Debes escribir una dirección de correo electrónico"
           }
         }catch(error){
-          console.log(error);
           this.errorMsg = "Ya estas suscrito!"
         }
       } catch (error) {
