@@ -1,34 +1,13 @@
 <template>
-  <section class="container">
-    <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1 class="display-3">Politica de comentarios</h1>
-      </div>
+  <div class="container-fluid">
+    <div class="info">
+      <h1 class="title-1">Inspiration @ Illustrarama</h1>
     </div>
-
-    <div class="container">
-      <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-12">
-          <h2>Reglas</h2>
-          <p>Estamos utilizando <a href="https://disqus.com/">Disqus</a> para administrar y moderar todos los comentarios del sitio. Para poder tener la mejor experiencia, toma en cuenta las siguientes reglas para poder participar en las discusiones en los articulos:</p>
-      		<p><strong>1.</strong> No se admitirá propaganda de productos, servicios, organizaciones u otras entidades comerciales.</p>
-          <p><strong>2.</strong> Se eliminarán aquellas publicaciones que sólo contengan un enlace o que éste no refuerce los argumentos publicados junto a él.</p>
-          <p><strong>3.</strong> Seguimos una política de tolerancia cero con todo aquello que consideramos “discurso del odio”. Se bloqueará al usuario y se eliminarán publicaciones que contengan: Lenguaje vulgar, obsceno u ofensivo; ataques personales de cualquier forma – incluyendo imágenes/memes- ; comentarios inadecuados de índole religiosa, sexual, política o racial; acusaciones sin fundamento o calumnias.</p>
-          <p><strong>4.</strong> Relevancia: Se ruega a los usuarios que sus opiniones sean relevantes con la noticia que se esté comentando.</p>
-          <p><strong>5.</strong> Información personal. Rogamos no compartir ningún tipo de información personal, números de teléfono, correos electrónicos, páginas web, redes sociales.</p>
-        </div>
-      </div>
-
-      <hr>
-
-
-    </div> <!-- /container -->
-  </section>
+  </div>
 </template>
 
 <script>
+import API from '~/lib/api.js'
 
 export default {
   head () {
@@ -36,7 +15,7 @@ export default {
       htmlAttrs: {
         lang: 'es'
       },
-      title: `Illustrarama | Source of illustration and design news | Politica de comentarios`,
+      title: `Inspiration @ Illustrarama ${this.pageText}`,
       meta: [
         {
           "http-equiv": `content-language`,
@@ -49,7 +28,7 @@ export default {
         {
           hid: `description`,
           name: 'description',
-          content: `Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politica de comentarios`
+          content: `Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Inspiración ${this.pageText}`
         },
         {
           hid: `keywords`,
@@ -80,7 +59,7 @@ export default {
         {
           hid: `og:title`,
           property: 'og:title',
-          content: 'Illustrarama | Politica de comentarios'
+          content: 'Inspiration @ Illustrarama'
         },
         {
           hid: `og:description`,
@@ -100,7 +79,7 @@ export default {
         {
           hid: `og:site_name`,
           property: 'og:site_name',
-          content: 'Illustrarama.com | Politica de comentarios'
+          content: 'Illustrarama.com | Politica de privacidad'
         },
         {
           hid: `og:url`,
@@ -110,17 +89,17 @@ export default {
         {
           hid: `twitter:title`,
           name: 'twitter:title',
-          content: 'Illustrarama | Politica de comentarios'
+          content: 'Illustrarama | Politica de privacidad'
         },
         {
           hid: `twitter:summary`,
           name: 'twitter:summary',
-          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de comentarios'
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de cookies'
         },
         {
           hid: `twitter:description`,
           name: 'twitter:description',
-          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de comentarios'
+          content: 'Las mejores noticias de diseño e ilustración todos los dias. Tu dosis diaria de inspiración | Politicas de cookies'
         },
         {
           hid: `twitter:image`,
@@ -135,15 +114,54 @@ export default {
       ],
       __dangerouslyDisableSanitizers: ['script'],
       link: [
-        { rel: 'canonical', href: `https://www.illustrarama.com/about` }
+        { rel: 'canonical', href: `https://www.illustrarama.com/inspiration` }
       ]
     }
   },
-  components: {
+  data() {
+      return {
+        slot: process.env.ADSENSE_SLOT || "0000000000",
+      };
+    },
+  async asyncData ({ route }) {
+    let page = 1;
+    let pageText = "";
+    if (route.query.page !== undefined){
+      page = `${route.query.page}`;
+    }
+    let tag = await API.tags();
+    let postentries = await API.showcase(page); //axios.get(`https://api.illustrarama.com/api/v1/news?page=${page}`)
+    page = +page+1;
+    if (page > 2){
+      pageText = `| Página ${page-1}`;
+    }
+    // if (postentries.data.length > 0){
+    //   for (let i=0; i<postentries.data.length; i++){
+    //
+    //     let disqus = await axios.get(`https://disqus.com/api/3.0/threads/list.json?api_secret=1dGauS5aMUoSEFuFFyy2vser61CJvliz04noYV8e5Qm3TTzjW4mFn0x6j6d67xQ2&forum=www-illustrarama-com-1&thread=link:https://www.illustrarama.com/news?v=${postentries.data[i]._id}`);
+    //
+    //     if (disqus.data.response !== undefined && disqus.data.response.length > 0){
+    //       postentries.data[i].comments = disqus.data.response[0].posts;
+    //       postentries.data[i].likes = disqus.data.response[0].likes;
+    //     }else{
+    //       postentries.data[i].comments = 0;
+    //       postentries.data[i].likes = 0;
+    //     }
+    //   }
+    // }
+    return { posts: postentries.posts, page: page, tags: tag.tags, pageText: pageText }
   }
 }
 </script>
 
 <style>
-
+.container-fluid .info {
+  /* width: 300px; */
+  margin: 50px auto;
+}
+.container-fluid .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  color: #333333;
+}
 </style>

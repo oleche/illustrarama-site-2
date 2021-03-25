@@ -65,9 +65,14 @@ export default {
           content: 'https://www.illustrarama.com/logo.png'
         },
         {
+          hid: 'facebook-domain-verification',
+          name: 'facebook-domain-verification',
+          content: process.env.FACEBOOK_DOMAIN || "0000000000"
+        },
+        {
           hid: 'fb:app_id',
           property: 'fb:app_id',
-          content: '541685809560665'
+          content: '438661783871304'
         },
         {
           hid: `name`,

@@ -9,6 +9,21 @@
       <div class="col-md-2 col-xs-12 text-center">Siguenos en: <a href="https://www.facebook.com/illustrarama" target="_blank" class="pull-right" rel="noopener"><img class="img img-responsive" src="/ico-facebook.png" alt="Facebook logo to illustrarama fanpage"></a></div>
     </div>
 
+    <b-modal id="modal-2" hide-header hide-footer body-class="">
+      <template v-slot:modal-title>
+
+      </template>
+      <div class="text-center container">
+        <b-row>
+          <b-col class="col-sub">
+            <h1 class="title-subs text-center">¡Gracias por tu suscripción!</h1>
+            <p class="col text-center last-text-subs">Hemos enviado un correo a tu buzón de entrada</p>
+            <b-button class="mt-3 btn btn-outline-danger button-subs-space" v-on:click="closeWelcomeModal">Cerrar</b-button>
+          </b-col>
+        </b-row>
+      </div>
+    </b-modal>
+
     <b-modal id="modal-1" hide-header hide-footer body-class="modalito">
       <template v-slot:modal-title>
 
@@ -63,10 +78,6 @@
   font-family: "Poiret One", cursive, sans-serif!important;
   font-weight: bolder;
 }
-.col-sub{
-  padding:10px;
-  display: block;
-}
 .error{
   color:#E02D19;
   top:5px;
@@ -85,6 +96,18 @@
 .bgsubs{
   background: url('https://picsum.photos/500/700?grayscale');
   background-size:cover;
+}
+@media only screen and (min-width: 600px) {
+  .col-sub{
+    padding:10px;
+    display: block;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .col-sub{
+    display: block;
+    margin-left: 10px;
+  }
 }
 </style>
 <script>
@@ -110,6 +133,9 @@ export default {
     }
   },
   methods: {
+    closeWelcomeModal(){
+      this.$root.$emit('bv::hide::modal', 'modal-2', '#btnShow')
+    },
     async subscribe(){
       try {
         const token = await this.$recaptcha.execute('login')
@@ -122,6 +148,7 @@ export default {
               headers: { Authorization: "Basic "+(process.env.API_AUTH || '123') }
             })
             this.$root.$emit('bv::hide::modal', 'modal-1', '#btnShow')
+            this.$root.$emit('bv::show::modal', 'modal-2', '#btnShow')
           }else{
             this.errorMsg = "Debes escribir una dirección de correo electrónico"
           }
