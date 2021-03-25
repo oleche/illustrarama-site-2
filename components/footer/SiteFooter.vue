@@ -127,7 +127,8 @@ export default {
     }
   },
   async mounted() {
-    await this.$recaptcha.init()
+    await this.$fb.enable();
+    await this.$recaptcha.init();
     if (this.showSubscription !== undefined && this.showSubscription !== ""){
       this.$root.$emit('bv::show::modal', 'modal-1', '#btnShow')
     }

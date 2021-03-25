@@ -69,6 +69,7 @@ module.exports = {
       /* module options */
       track: 'PageView',
       pixelId: process.env.FACEBOOK_PIXEL_KEY || '000000000000000',
+      disabled: false
     }],
     ['@miyaoka/nuxt-twitter-widgets-module', {
       /* module options */
