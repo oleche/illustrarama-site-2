@@ -337,6 +337,10 @@ export default {
   padding: 0;
 }
 
+.blockquote-footer {
+  word-break: break-all;
+}
+
 .post-list-item {
   list-style: none;
 }
