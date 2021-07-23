@@ -6,7 +6,7 @@ exports[`SiteHeader renders properly 1`] = `
     <div id="nav_collapse" class="navbar-collapse collapse" style="display: none;">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item"><a target="_self" href="/" class="nav-link">Inicio</a></li>
-        <li class="nav-item"><a target="_self" href="/about" class="nav-link">Acerca de</a></li> <button type="button" class="btn btn btn-outline-danger btn-susbcribe btn-secondary">¡Suscribete!</button>
+        <li class="nav-item"><a target="_self" href="/about" class="nav-link">Acerca de</a></li> <button type="button" class="btn btn btn-outline-danger btn-susbcribe btn-secondary">Tu cuenta</button>
       </ul> <a target="_self" href="/" class="navbar-brand d-none d-lg-block d-xl-block title-brand text-center">Illustrarama<span class="sub-title-brand"><br>Source of illustration &amp; design news</span></a>
       <div class="ml-auto right"><br class="d-block d-sm-none d-xs-none">
         <form action="/search" class="navbar-nav"><input name="q" type="text" placeholder="Buscar" class="mr-sm-2 form-control form-control-sm"> <button type="submit" class="btn btn btn-outline-danger my-2 my-sm-0 btn-secondary btn-sm">Buscar</button></form>

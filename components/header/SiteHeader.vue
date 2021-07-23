@@ -6,7 +6,7 @@
       <b-navbar-nav class="mr-auto">
         <b-nav-item href="/">Inicio</b-nav-item>
         <b-nav-item href="/about">Acerca de</b-nav-item>
-        <b-button class="btn btn-outline-danger btn-susbcribe" v-b-modal.modal-1 ref="btnShow">¡Suscribete!</b-button>
+        <b-button class="btn btn-outline-danger btn-susbcribe" ref="btnShow">Tu cuenta</b-button>
       </b-navbar-nav>
       <b-navbar-brand class="d-none d-lg-block d-xl-block title-brand text-center" href="/">Illustrarama<span class="sub-title-brand"><br/>Source of illustration & design news</span></b-navbar-brand>
       <div class="ml-auto right">
