@@ -72,21 +72,6 @@ exports[`SiteHeader renders properly 1`] = `
         </div>
       </div>
     </div>
-    <b-modal-stub id="modal-2" size="md" buttonsize="" title="" titletag="h5" bodyclass="" hideheader="true" hidefooter="true" headercloselabel="Close" canceltitle="Cancel" oktitle="OK" cancelvariant="secondary" okvariant="primary">
-      <div class="text-center container">
-        <b-row-stub tag="div">
-          <b-col-stub tag="div" class="col-sub"></b-col-stub>
-        </b-row-stub>
-      </div>
-    </b-modal-stub>
-    <b-modal-stub id="modal-1" size="md" buttonsize="" title="" titletag="h5" bodyclass="modalito" hideheader="true" hidefooter="true" headercloselabel="Close" canceltitle="Cancel" oktitle="OK" cancelvariant="secondary" okvariant="primary">
-      <div class="d-block text-center">
-        <b-row-stub tag="div">
-          <b-col-stub cols="12" md="4" tag="div" class="bgsubs"></b-col-stub>
-          <b-col-stub tag="div" class="col-sub"></b-col-stub>
-        </b-row-stub>
-      </div>
-    </b-modal-stub>
   </div>
 </footer>
 `;

@@ -126,35 +126,6 @@
             <!-- End Copyright Container -->
         </div>
         <!-- End Copyright -->
-
-      <b-modal id="modal-2" hide-header hide-footer body-class="">
-        <template v-slot:modal-title>
-
-        </template>
-        <div class="text-center container">
-          <b-row>
-            <b-col class="col-sub">
-
-            </b-col>
-          </b-row>
-        </div>
-      </b-modal>
-
-      <b-modal id="modal-1" hide-header hide-footer body-class="modalito">
-        <template v-slot:modal-title>
-
-        </template>
-        <div class="d-block text-center">
-          <b-row>
-            <b-col cols="12" md="4" class="bgsubs">
-
-            </b-col>
-            <b-col class="col-sub">
-
-            </b-col>
-          </b-row>
-        </div>
-      </b-modal>
     </div>
   </footer>
 
