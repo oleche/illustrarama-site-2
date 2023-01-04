@@ -1,14 +1,11 @@
-version: 2.1
+version: 2
+
 jobs:
-  build:
-    working_directory: ~/repo
+  ci:
     docker:
-      - image: circleci/node:10.16.3
+      - image: cimg/node:lts
     steps:
       - checkout
-      - run:
-          name: update-npm
-          command: "sudo npm install -g npm@5"
       - restore_cache:
           key: dependency-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -19,8 +16,22 @@ jobs:
           paths:
             - ./node_modules
       - run:
+          name: jest version
+          command: npm exec jest --v
+      - run:
           name: test
           command: npm run test
       - deploy:
           name: digital-ocean
           command: ssh -o "StrictHostKeyChecking no" root@128.199.57.228 "cd /opt/illustrarama/illustrarama-site; git pull; npm install; npm run-script build; pm2 restart illustrarama-site"
+
+workflows:
+  version: 2
+  ci:
+    jobs:
+      - ci:
+          filters:
+            branches:
+              only:
+                - main
+                - master
